@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface MainViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+{
+    NSInteger *selectedRow;
+}
 
 //NSArray
 @property (nonatomic, strong) NSArray *metricArray;
@@ -25,13 +28,8 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *metricPicker;
 
 
-
 //UIButton - Action
 - (IBAction)calculateButton:(id)sender;
-
-//Methods
-
-
 
 
 @end
