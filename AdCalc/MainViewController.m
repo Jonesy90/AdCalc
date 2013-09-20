@@ -25,14 +25,14 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     _metricArray = [[NSArray alloc] initWithObjects:@"CPM", @"CPC", @"CPA", nil];
-
-}
-
-- (IBAction)calculateButton:(id)sender {
     
     //Creating two float values that is taken from the two textFields.
     float revenue = [self.revenueTextField.text floatValue];
     float delivery = [self.deliveryTextField.text floatValue];
+
+}
+
+- (IBAction)calculateButton:(id)sender {
     
     //Checks for white spaces within the textField.
     NSString *revenueString = [self.revenueTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -71,6 +71,7 @@
     return 0;
 }
 
+//Does something once a row is selected??
 - (void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
 
     
