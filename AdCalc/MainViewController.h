@@ -32,4 +32,7 @@
 - (IBAction)calculateButton:(id)sender;
 
 
+- (void)cpmCalculation;
+
+
 @end

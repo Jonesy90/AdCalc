@@ -18,6 +18,7 @@
 @synthesize revenueTextField = _revenueTextField;
 @synthesize deliveryTextField = _deliveryTextField;
 @synthesize metricPicker = _metricPicker;
+@synthesize totalLabel = _totalLabel;
 
 
 - (void)viewDidLoad
@@ -26,9 +27,8 @@
 	// Do any additional setup after loading the view.
     _metricArray = [[NSArray alloc] initWithObjects:@"CPM", @"CPC", @"CPA", nil];
     
-    //Creating two float values that is taken from the two textFields.
-    float revenue = [self.revenueTextField.text floatValue];
-    float delivery = [self.deliveryTextField.text floatValue];
+    UITapGestureRecognizer *tabGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeKeyboard)];
+    [self.view addGestureRecognizer:tabGesture];
 
 }
 
@@ -44,9 +44,27 @@
         
         [alertView show];
     }
+    else {
+        //Checks what row the UIPickerView is in and makes a decision to what method to call.
+    }
     
 }
 
+- (void) removeKeyboard {
+    [self.revenueTextField resignFirstResponder];
+    [self.deliveryTextField resignFirstResponder];
+}
+
+
+- (void)cpmCalculation {
+    //Creating two float values that is taken from the two textFields.
+    float revenue = [self.revenueTextField.text floatValue];
+    float delivery = [self.deliveryTextField.text floatValue];
+    float total = [self.totalLabel.text floatValue];
+    
+    total = revenue / delivery * 1000;
+    
+}
 
 #pragma mark - UIPickerView Methods
 
@@ -73,6 +91,21 @@
 
 //Does something once a row is selected??
 - (void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    //Displays the row that is selected in the _metricsArray.
+    //NSLog(@"Selected Item: %@. Index of selected item %i", [_metricArray objectAtIndex:row], row);
+    
+    //ELSE/IF Statement on a selected row in component.
+    if ([_metricPicker selectedRowInComponent:component] == 0) {
+        NSLog(@"Selected Item: %@", [_metricArray objectAtIndex:row]);
+        [self cpmCalculation];
+    }
+    else if ([_metricPicker selectedRowInComponent:component] == 1) {
+        NSLog(@"Selected Item: %@", [_metricArray objectAtIndex:row]);
+    }
+    else if ([_metricPicker selectedRowInComponent:component] == 2) {
+        NSLog(@"Selected Item: %@", [_metricArray objectAtIndex:row]);
+    }
+
 
     
 }
