@@ -9,22 +9,20 @@
 #import <UIKit/UIKit.h>
 
 @interface MainViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+
 {
-    NSInteger *selectedRow;
+    
 }
 
-//NSArray
 @property (nonatomic, strong) NSArray *metricArray;
 
-//UILabels
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 
-
-//UITextFields
 @property (weak, nonatomic) IBOutlet UITextField *revenueTextField;
 @property (weak, nonatomic) IBOutlet UITextField *deliveryTextField;
 
-//UIPicker
+@property (nonatomic, strong) NSInteger *selectedRow;
+
 @property (weak, nonatomic) IBOutlet UIPickerView *metricPicker;
 
 

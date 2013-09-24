@@ -29,7 +29,9 @@
     
     UITapGestureRecognizer *tabGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeKeyboard)];
     [self.view addGestureRecognizer:tabGesture];
-
+    
+    NSInteger *selectedRow = [[NSInteger alloc] init];
+    
 }
 
 - (IBAction)calculateButton:(id)sender {
@@ -46,7 +48,7 @@
     }
     else {
         //Checks what object is being highligted in the UIPicker view and calls a certain method.
-        if ([self.metricArray objectAtIndex:[_metricPicker selectedRowInComponent:0]]) {
+        if (self.selectedRow == 0) {
             [self cpmCalculation];
         }
         else if ([self.metricArray objectAtIndex:[_metricPicker selectedRowInComponent:1]]){
