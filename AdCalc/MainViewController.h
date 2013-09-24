@@ -11,6 +11,7 @@
 @interface MainViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 {
+    NSInteger selectedRow;
     
 }
 
@@ -20,8 +21,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *revenueTextField;
 @property (weak, nonatomic) IBOutlet UITextField *deliveryTextField;
-
-@property (nonatomic, strong) NSInteger *selectedRow;
 
 @property (weak, nonatomic) IBOutlet UIPickerView *metricPicker;
 

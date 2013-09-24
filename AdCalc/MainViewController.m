@@ -30,7 +30,8 @@
     UITapGestureRecognizer *tabGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeKeyboard)];
     [self.view addGestureRecognizer:tabGesture];
     
-    NSInteger *selectedRow = [[NSInteger alloc] init];
+    
+    
     
 }
 
@@ -48,13 +49,13 @@
     }
     else {
         //Checks what object is being highligted in the UIPicker view and calls a certain method.
-        if (self.selectedRow == 0) {
+        if (selectedRow == 0) {
             [self cpmCalculation];
         }
-        else if ([self.metricArray objectAtIndex:[_metricPicker selectedRowInComponent:1]]){
+        else if (selectedRow == 1){
             [self cpcCalculation];
         }
-        else if ([self.metricArray objectAtIndex:[_metricPicker selectedRowInComponent:2]]){
+        else if (selectedRow == 2){
             [self cpcCalculation];
         }
         else {
@@ -82,7 +83,7 @@
     //CPM Calculation
     total = revenue / delivery * 1000;
     //Displays the float total in the totalLabel field.
-    self.totalLabel.text = [[NSString alloc] initWithFormat:@"%.02f", total];
+    self.totalLabel.text = [[NSString alloc] initWithFormat:@"%.05f", total];
     
 //    NSLog(@"This is a CPM Calculation");
     NSLog(@"This is a CPM Calculation");
@@ -97,7 +98,7 @@
     //CPM Calculation
     total = revenue / delivery;
     //Displays the float total in the totalLabel field.
-    self.totalLabel.text = [[NSString alloc] initWithFormat:@"%0.02f", total];
+    self.totalLabel.text = [[NSString alloc] initWithFormat:@"%0.05f", total];
     NSLog(@"This is a CPC or CPA Calculation");
     
 }
@@ -130,6 +131,8 @@
 - (void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     //Displays the row that is selected in the _metricsArray.
     //NSLog(@"Selected Item: %@. Index of selected item %i", [_metricArray objectAtIndex:row], row);
+    
+    selectedRow = [_metricPicker selectedRowInComponent:component];
     
     //ELSE/IF Statement on a selected row in component.
     if ([_metricPicker selectedRowInComponent:component] == 0) {
