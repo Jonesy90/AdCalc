@@ -33,6 +33,7 @@
 
 
 - (void)cpmCalculation;
+- (void)cpcCalculation;
 
 
 @end

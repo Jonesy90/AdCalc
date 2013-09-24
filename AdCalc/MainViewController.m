@@ -45,7 +45,22 @@
         [alertView show];
     }
     else {
-        //Checks what row the UIPickerView is in and makes a decision to what method to call.
+        //Checks what object is being highligted in the UIPicker view and calls a certain method.
+        if ([self.metricArray objectAtIndex:[_metricPicker selectedRowInComponent:0]]) {
+            [self cpmCalculation];
+        }
+        else if ([self.metricArray objectAtIndex:[_metricPicker selectedRowInComponent:1]]){
+            [self cpcCalculation];
+        }
+        else if ([self.metricArray objectAtIndex:[_metricPicker selectedRowInComponent:2]]){
+            [self cpcCalculation];
+        }
+        else {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Something Went Wrong" message:@"Something went wrong. Please try again." delegate:nil cancelButtonTitle:@"Done" otherButtonTitles: nil];
+            
+            [alertView show];
+        }
+        
     }
     
 }
@@ -60,11 +75,31 @@
     //Creating two float values that is taken from the two textFields.
     float revenue = [self.revenueTextField.text floatValue];
     float delivery = [self.deliveryTextField.text floatValue];
-    float total = [self.totalLabel.text floatValue];
+    double total = [self.totalLabel.text doubleValue];
     
+    //CPM Calculation
     total = revenue / delivery * 1000;
+    //Displays the float total in the totalLabel field.
+    self.totalLabel.text = [[NSString alloc] initWithFormat:@"%.02f", total];
+    
+//    NSLog(@"This is a CPM Calculation");
+    NSLog(@"This is a CPM Calculation");
+}
+
+- (void)cpcCalculation{
+    //Creating two float values that is taken from the two textFields.
+    float revenue = [self.revenueTextField.text floatValue];
+    float delivery = [self.deliveryTextField.text floatValue];
+    double total = [self.totalLabel.text doubleValue];
+    
+    //CPM Calculation
+    total = revenue / delivery;
+    //Displays the float total in the totalLabel field.
+    self.totalLabel.text = [[NSString alloc] initWithFormat:@"%0.02f", total];
+    NSLog(@"This is a CPC or CPA Calculation");
     
 }
+
 
 #pragma mark - UIPickerView Methods
 
@@ -97,7 +132,6 @@
     //ELSE/IF Statement on a selected row in component.
     if ([_metricPicker selectedRowInComponent:component] == 0) {
         NSLog(@"Selected Item: %@", [_metricArray objectAtIndex:row]);
-        [self cpmCalculation];
     }
     else if ([_metricPicker selectedRowInComponent:component] == 1) {
         NSLog(@"Selected Item: %@", [_metricArray objectAtIndex:row]);
@@ -105,9 +139,6 @@
     else if ([_metricPicker selectedRowInComponent:component] == 2) {
         NSLog(@"Selected Item: %@", [_metricArray objectAtIndex:row]);
     }
-
-
-    
 }
 
 @end
