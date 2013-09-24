@@ -31,6 +31,7 @@
 
 - (void)cpmCalculation;
 - (void)cpcCalculation;
+- (IBAction)clear:(id)sender;
 
 
 @end

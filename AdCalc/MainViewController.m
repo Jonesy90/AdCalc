@@ -25,7 +25,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    _metricArray = [[NSArray alloc] initWithObjects:@"CPM", @"CPC", @"CPA", nil];
+    _metricArray = [[NSArray alloc] initWithObjects:@"CPM", @"CPC/CPA", nil];
     
     UITapGestureRecognizer *tabGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeKeyboard)];
     [self.view addGestureRecognizer:tabGesture];
@@ -53,9 +53,6 @@
             [self cpmCalculation];
         }
         else if (selectedRow == 1){
-            [self cpcCalculation];
-        }
-        else if (selectedRow == 2){
             [self cpcCalculation];
         }
         else {
@@ -103,6 +100,14 @@
     
 }
 
+- (IBAction)clear:(id)sender {
+    
+    self.totalLabel.text = 0;
+    self.revenueTextField.text = 0;
+    self.deliveryTextField.text = 0;
+    
+}
+
 
 #pragma mark - UIPickerView Methods
 
@@ -141,9 +146,7 @@
     else if ([_metricPicker selectedRowInComponent:component] == 1) {
         NSLog(@"Selected Item: %@", [_metricArray objectAtIndex:row]);
     }
-    else if ([_metricPicker selectedRowInComponent:component] == 2) {
-        NSLog(@"Selected Item: %@", [_metricArray objectAtIndex:row]);
-    }
+
 }
 
 @end

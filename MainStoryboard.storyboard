@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jOg-zx-EBg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="zR2-3a-o9D">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Main View Controller - AdCal-->
         <scene sceneID="Xw2-I2-3ZI">
             <objects>
                 <viewController id="jOg-zx-EBg" customClass="MainViewController" sceneMemberID="viewController">
@@ -55,6 +55,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="AdCal" id="kwK-mb-Jwb">
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="OUT-4g-rK8">
+                            <connections>
+                                <action selector="clear:" destination="jOg-zx-EBg" id="Lwd-C0-9uH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="deliveryTextField" destination="QhR-jk-eud" id="JPo-BF-TOo"/>
                         <outlet property="metricPicker" destination="BfH-73-oVf" id="YI9-hQ-iU0"/>
@@ -64,7 +71,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O2w-E5-O8c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="760" y="92"/>
+            <point key="canvasLocation" x="1263" y="153"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="81R-d4-tNv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zR2-3a-o9D" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zMw-9R-eds">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jOg-zx-EBg" kind="relationship" relationship="rootViewController" id="JdJ-eO-wi9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TKg-Cy-TRC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="737" y="153"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
