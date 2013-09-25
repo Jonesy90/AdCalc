@@ -61,6 +61,11 @@
                                 <action selector="clear:" destination="jOg-zx-EBg" id="Lwd-C0-9uH"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Currency" id="nqY-ij-fN1">
+                            <connections>
+                                <segue destination="7Hg-MP-Arc" kind="push" id="HkH-qa-tRg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="deliveryTextField" destination="QhR-jk-eud" id="JPo-BF-TOo"/>
@@ -72,6 +77,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O2w-E5-O8c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1263" y="153"/>
+        </scene>
+        <!--Currency View Controller - Currency Exchange Rate-->
+        <scene sceneID="Zbh-GE-9c6">
+            <objects>
+                <viewController id="7Hg-MP-Arc" customClass="CurrencyViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D1p-EN-5xa"/>
+                        <viewControllerLayoutGuide type="bottom" id="MlV-Pr-PIA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vZd-GF-Xy0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Currency Exchange Rate" id="FnB-5a-szo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lNL-bg-AS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1755" y="153"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="81R-d4-tNv">
