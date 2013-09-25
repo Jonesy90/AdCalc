@@ -8,14 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+#define METRIC 0
+#define CURRENCY 1
+
+
+
 @interface MainViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 {
-    NSInteger selectedRow;
+    NSInteger metricRow;
+    NSInteger currencyRow;
     
 }
 
 @property (nonatomic, strong) NSArray *metricArray;
+@property (nonatomic, strong) NSArray *currencyArray;
 
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 
@@ -24,14 +31,11 @@
 
 @property (weak, nonatomic) IBOutlet UIPickerView *metricPicker;
 
-
-//UIButton - Action
 - (IBAction)calculateButton:(id)sender;
-
-
-- (void)cpmCalculation;
-- (void)cpcCalculation;
 - (IBAction)clear:(id)sender;
+
+- (void) clearContents;
+
 
 
 @end
