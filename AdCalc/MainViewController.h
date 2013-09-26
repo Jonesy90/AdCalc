@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 
 #define METRIC 0
-#define CURRENCY 1
-
 
 
 @interface MainViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>

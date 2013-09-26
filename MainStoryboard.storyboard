@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller - AdCal-->
+        <!--Main View Controller - AdCalc-->
         <scene sceneID="Xw2-I2-3ZI">
             <objects>
                 <viewController id="jOg-zx-EBg" customClass="MainViewController" sceneMemberID="viewController">
@@ -25,6 +25,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gob-Dc-9tm">
                                 <rect key="frame" x="75" y="419" width="171" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Calculate">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -38,7 +39,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Delivery" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QhR-jk-eud">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Impressions/Clicks" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QhR-jk-eud">
                                 <rect key="frame" x="20" y="177" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -55,15 +56,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="AdCal" id="kwK-mb-Jwb">
+                    <navigationItem key="navigationItem" title="AdCalc" id="kwK-mb-Jwb">
                         <barButtonItem key="leftBarButtonItem" title="Clear" id="OUT-4g-rK8">
                             <connections>
                                 <action selector="clear:" destination="jOg-zx-EBg" id="Lwd-C0-9uH"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Currency" id="nqY-ij-fN1">
-                            <connections>
-                                <segue destination="10f-mR-CEg" kind="push" id="074-Pl-QQx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -77,51 +73,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O2w-E5-O8c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1263" y="153"/>
-        </scene>
-        <!--Currency Table View Controller-->
-        <scene sceneID="2Nq-g4-IEP">
-            <objects>
-                <tableViewController id="10f-mR-CEg" customClass="CurrencyTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="PwN-Jj-4TH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="CWm-oy-2o7" detailTextLabel="ewd-k6-7A4" style="IBUITableViewCellStyleSubtitle" id="BUY-5R-Nh4">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BUY-5R-Nh4" id="S37-0f-2hH">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CWm-oy-2o7">
-                                            <rect key="frame" x="15" y="3" width="34" height="22"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ewd-k6-7A4">
-                                            <rect key="frame" x="15" y="25" width="43" height="15"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="10f-mR-CEg" id="dzt-Wi-5s0"/>
-                            <outlet property="delegate" destination="10f-mR-CEg" id="LH8-8o-hUf"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="5Qd-EB-71E"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HU3-ss-NcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1714" y="153"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="81R-d4-tNv">

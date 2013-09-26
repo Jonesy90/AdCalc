@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C11BAF517F4366700F08DA7 /* CurrencyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C11BAF417F4366700F08DA7 /* CurrencyTableViewController.m */; };
 		4C35832C17EC4BC500C359E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C35832B17EC4BC500C359E8 /* Foundation.framework */; };
 		4C35832E17EC4BC500C359E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C35832D17EC4BC500C359E8 /* CoreGraphics.framework */; };
 		4C35833017EC4BC500C359E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C35832F17EC4BC500C359E8 /* UIKit.framework */; };
@@ -35,8 +34,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4C11BAF317F4366700F08DA7 /* CurrencyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrencyTableViewController.h; sourceTree = "<group>"; };
-		4C11BAF417F4366700F08DA7 /* CurrencyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrencyTableViewController.m; sourceTree = "<group>"; };
 		4C35832817EC4BC500C359E8 /* AdCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C35832B17EC4BC500C359E8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C35832D17EC4BC500C359E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -118,8 +115,6 @@
 				4C35835A17EC4BDB00C359E8 /* MainStoryboard.storyboard */,
 				4C35833A17EC4BC500C359E8 /* AppDelegate.h */,
 				4C35833B17EC4BC500C359E8 /* AppDelegate.m */,
-				4C11BAF317F4366700F08DA7 /* CurrencyTableViewController.h */,
-				4C11BAF417F4366700F08DA7 /* CurrencyTableViewController.m */,
 				4C35835C17EC4CA600C359E8 /* MainViewController.h */,
 				4C35835D17EC4CA600C359E8 /* MainViewController.m */,
 				4C35833D17EC4BC500C359E8 /* Images.xcassets */,
@@ -255,7 +250,6 @@
 			files = (
 				4C35833C17EC4BC500C359E8 /* AppDelegate.m in Sources */,
 				4C35835E17EC4CA600C359E8 /* MainViewController.m in Sources */,
-				4C11BAF517F4366700F08DA7 /* CurrencyTableViewController.m in Sources */,
 				4C35833817EC4BC500C359E8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

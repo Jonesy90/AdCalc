@@ -26,12 +26,11 @@
 {
     [super viewDidLoad];
     _metricArray = [[NSArray alloc] initWithObjects:@"CPM", @"CPC/CPA", nil];
-    _currencyArray = [[NSArray alloc] initWithObjects:@"Dollars", @"Euros", @"Sterling", nil];
     
     UITapGestureRecognizer *tabGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeKeyboard)];
     [self.view addGestureRecognizer:tabGesture];
     
-    
+    self.view.backgroundColor = [UIColor lightGrayColor];
     
 }
 
@@ -55,31 +54,13 @@
     }
     else {
         //Dollars.
-        if (metricRow == 0 && currencyRow == 0) {
+        if (metricRow == 0) {
             total = revenue / delivery * 1000;
             self.totalLabel.text = [[NSString alloc] initWithFormat:@"$ %.05f", total];
         }
-        else if (metricRow == 1 && currencyRow == 0){
+        else if (metricRow == 1){
             total = revenue / delivery;
             self.totalLabel.text = [[NSString alloc] initWithFormat:@"$ %0.05f", total];
-        }
-        //Euros.
-        else if (metricRow == 0 && currencyRow == 1){
-            total = revenue / delivery * 1000;
-            self.totalLabel.text = [[NSString alloc] initWithFormat:@"€ %.05f", total];
-        }
-        else if (metricRow == 1 && currencyRow == 1) {
-            total = revenue / delivery;
-            self.totalLabel.text = [[NSString alloc] initWithFormat:@"€ %0.05f", total];
-        }
-        //Pounds.
-        else if (metricRow == 0 && currencyRow == 2) {
-            total = revenue / delivery * 1000;
-            self.totalLabel.text = [[NSString alloc] initWithFormat:@"£ %.05f", total];
-        }
-        else if (metricRow == 1 && currencyRow == 2) {
-            total = revenue / delivery;
-            self.totalLabel.text = [[NSString alloc] initWithFormat:@"£ %0.05f", total];
         }
         else {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Something Went Wrong" message:@"Something went wrong. Please try again." delegate:nil cancelButtonTitle:@"Done" otherButtonTitles: nil];
@@ -112,7 +93,7 @@
 //Remember to link up the delegates at using the Storyboard function. Using the Outlets.
 
 - (NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    return 2;
+    return 1;
 }
 
 //Instead of putting in a number we'd count the amount of objects in the array which will return the number of rows in the pickerview.
@@ -121,11 +102,6 @@
     if (component == METRIC) {
         return [_metricArray count];
     }
-    
-    if (component == CURRENCY) {
-        return [_currencyArray count];
-    }
-    
     return 0;
 }
 
@@ -135,31 +111,19 @@
     if (component == METRIC) {
     return [_metricArray objectAtIndex:row];
     }
-    
-    if (component == CURRENCY) {
-        return [_currencyArray objectAtIndex:row];
-    }
-    
-    
+
     return 0;
 }
 
 - (void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     
     metricRow = [_metricPicker selectedRowInComponent:METRIC];
-    currencyRow = [_metricPicker selectedRowInComponent:CURRENCY];
+
     
 //    //Metric Row Tests
 //    if (metricRow == row) {
 //         NSLog(@"Selected Item: %@",[_metricArray objectAtIndex:row]);
 //    }
-//    
-//    
-//    //Currency Row Tests
-//    if (currencyRow == row) {
-//        NSLog(@"Selected Item: %@",[_currencyArray objectAtIndex:row]);
-//    }
-
 
 }
 
