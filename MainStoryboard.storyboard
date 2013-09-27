@@ -62,6 +62,7 @@
                                 <action selector="clear:" destination="jOg-zx-EBg" id="Lwd-C0-9uH"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Info" style="done" id="fbf-wB-NC9"/>
                     </navigationItem>
                     <connections>
                         <outlet property="deliveryTextField" destination="QhR-jk-eud" id="JPo-BF-TOo"/>
@@ -72,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O2w-E5-O8c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1263" y="153"/>
+            <point key="canvasLocation" x="1186" y="153"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="81R-d4-tNv">

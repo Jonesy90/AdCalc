@@ -42,30 +42,32 @@
     
     //Creating two float values that is taken from the two textFields.
     float revenue = [self.revenueTextField.text floatValue];
-    float delivery = [self.deliveryTextField.text floatValue];
+    int delivery = [self.deliveryTextField.text integerValue];
     double total = [self.totalLabel.text doubleValue];
+    
+    //Alerts.
+    UIAlertView *somethingWentWrongAlert = [[UIAlertView alloc] initWithTitle:@"Something Went Wrong" message:@"Something went wrong. Please try again." delegate:nil cancelButtonTitle:@"Done" otherButtonTitles: nil];
+    UIAlertView *blankFieldsAlert = [[UIAlertView alloc] initWithTitle:@"Whoops" message:@"Revenue or Delivery fields are blank, please fill in." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
     
     
     //Checks the length of the revenue and delivery objects and sees if they length is equal to 0. If it is an alert will display.
     if ([revenueString length] == 0 || [deliveryString length] == 0){
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Whoops" message:@"Revenue or Delivery fields are blank, please fill in." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+
         
-        [alertView show];
+        [blankFieldsAlert show];
     }
     else {
-        //Dollars.
-        if (metricRow == 0) {
+        //The Metric will be in dollars.
+        if (metricRow == 0 && delivery > 0) {
             total = revenue / delivery * 1000;
-            self.totalLabel.text = [[NSString alloc] initWithFormat:@"$ %.05f", total];
+            self.totalLabel.text = [[NSString alloc] initWithFormat:@"$ %0.02f", total];
         }
-        else if (metricRow == 1){
+        else if (metricRow == 1 && delivery > 0){
             total = revenue / delivery;
-            self.totalLabel.text = [[NSString alloc] initWithFormat:@"$ %0.05f", total];
+            self.totalLabel.text = [[NSString alloc] initWithFormat:@"$ %0.02f", total];
         }
         else {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Something Went Wrong" message:@"Something went wrong. Please try again." delegate:nil cancelButtonTitle:@"Done" otherButtonTitles: nil];
-            
-            [alertView show];
+            [somethingWentWrongAlert show];
         }
         
     }
@@ -83,8 +85,8 @@
 - (void)clearContents{
     
     self.totalLabel.text = @"0";
-    self.revenueTextField.text = 0;
-    self.deliveryTextField.text = 0;
+    self.revenueTextField.text = nil;
+    self.deliveryTextField.text = nil;
 }
 
 
@@ -134,19 +136,19 @@
 }
 
 - (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event{
-    NSLog(@"Motion Begin");
+//    NSLog(@"Motion Begin");
 }
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     if (motion == UIEventSubtypeMotionShake) {
         [self clearContents];
-        NSLog(@"Motion Ended");
+//        NSLog(@"Motion Ended");
     };
     
 }
 
 - (void)motionCancelled:(UIEventSubtype)motion withEvent:(UIEvent *)event{
-    NSLog(@"Motion Cancelled");
+//    NSLog(@"Motion Cancelled");
 }
 
 @end
