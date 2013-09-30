@@ -30,7 +30,8 @@
     UITapGestureRecognizer *tabGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeKeyboard)];
     [self.view addGestureRecognizer:tabGesture];
     
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor grayColor];
+    
     
 }
 
@@ -42,7 +43,7 @@
     
     //Creating two float values that is taken from the two textFields.
     float revenue = [self.revenueTextField.text floatValue];
-    int delivery = [self.deliveryTextField.text integerValue];
+    float delivery = [self.deliveryTextField.text floatValue];
     double total = [self.totalLabel.text doubleValue];
     
     //Alerts.
@@ -120,7 +121,6 @@
 - (void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     
     metricRow = [_metricPicker selectedRowInComponent:METRIC];
-
     
 //    //Metric Row Tests
 //    if (metricRow == row) {

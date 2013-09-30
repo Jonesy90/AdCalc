@@ -21,6 +21,8 @@
 		4C35835117EC4BC500C359E8 /* AdCalcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C35835017EC4BC500C359E8 /* AdCalcTests.m */; };
 		4C35835B17EC4BDB00C359E8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C35835A17EC4BDB00C359E8 /* MainStoryboard.storyboard */; };
 		4C35835E17EC4CA600C359E8 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C35835D17EC4CA600C359E8 /* MainViewController.m */; };
+		4CE5ED9D17F99FE90014C975 /* AdCalc_StartUp_Screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CE5ED9C17F99FE90014C975 /* AdCalc_StartUp_Screen.png */; };
+		4CE5ED9F17F9A04B0014C975 /* AdCalc_AppLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CE5ED9E17F9A04B0014C975 /* AdCalc_AppLogo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		4C35835A17EC4BDB00C359E8 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = ../MainStoryboard.storyboard; sourceTree = "<group>"; };
 		4C35835C17EC4CA600C359E8 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		4C35835D17EC4CA600C359E8 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		4CE5ED9C17F99FE90014C975 /* AdCalc_StartUp_Screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AdCalc_StartUp_Screen.png; sourceTree = "<group>"; };
+		4CE5ED9E17F9A04B0014C975 /* AdCalc_AppLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AdCalc_AppLogo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 		4C35833117EC4BC500C359E8 /* AdCalc */ = {
 			isa = PBXGroup;
 			children = (
+				4CE5ED9517F999070014C975 /* Images */,
 				4C35835A17EC4BDB00C359E8 /* MainStoryboard.storyboard */,
 				4C35833A17EC4BC500C359E8 /* AppDelegate.h */,
 				4C35833B17EC4BC500C359E8 /* AppDelegate.m */,
@@ -150,6 +155,15 @@
 				4C35834D17EC4BC500C359E8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4CE5ED9517F999070014C975 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				4CE5ED9E17F9A04B0014C975 /* AdCalc_AppLogo.png */,
+				4CE5ED9C17F99FE90014C975 /* AdCalc_StartUp_Screen.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +245,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C35835B17EC4BDB00C359E8 /* MainStoryboard.storyboard in Resources */,
+				4CE5ED9D17F99FE90014C975 /* AdCalc_StartUp_Screen.png in Resources */,
 				4C35833617EC4BC500C359E8 /* InfoPlist.strings in Resources */,
+				4CE5ED9F17F9A04B0014C975 /* AdCalc_AppLogo.png in Resources */,
 				4C35833E17EC4BC500C359E8 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
