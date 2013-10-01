@@ -10,6 +10,9 @@
 		4C2CF82A17FAEC6500338522 /* AdCalc_AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CF82917FAEC6500338522 /* AdCalc_AppIcon.png */; };
 		4C2CF82E17FAEEA300338522 /* AdCalc_BackgroundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CF82C17FAEEA300338522 /* AdCalc_BackgroundImage.png */; };
 		4C2CF83017FAF33F00338522 /* AdCalc_LoadUpScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CF82F17FAF33F00338522 /* AdCalc_LoadUpScreen.png */; };
+		4C2CF83217FAF9D700338522 /* AdCalc_SpotlightIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CF83117FAF9D700338522 /* AdCalc_SpotlightIcon.png */; };
+		4C2CF83417FAFA3900338522 /* AdCalc_SettingsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CF83317FAFA3900338522 /* AdCalc_SettingsIcon.png */; };
+		4C2CF83617FAFB0900338522 /* AdCalc_LoadUpScreen_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CF83517FAFB0900338522 /* AdCalc_LoadUpScreen_2x.png */; };
 		4C35832C17EC4BC500C359E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C35832B17EC4BC500C359E8 /* Foundation.framework */; };
 		4C35832E17EC4BC500C359E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C35832D17EC4BC500C359E8 /* CoreGraphics.framework */; };
 		4C35833017EC4BC500C359E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C35832F17EC4BC500C359E8 /* UIKit.framework */; };
@@ -40,6 +43,9 @@
 		4C2CF82917FAEC6500338522 /* AdCalc_AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AdCalc_AppIcon.png; sourceTree = "<group>"; };
 		4C2CF82C17FAEEA300338522 /* AdCalc_BackgroundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AdCalc_BackgroundImage.png; sourceTree = "<group>"; };
 		4C2CF82F17FAF33F00338522 /* AdCalc_LoadUpScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AdCalc_LoadUpScreen.png; sourceTree = "<group>"; };
+		4C2CF83117FAF9D700338522 /* AdCalc_SpotlightIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AdCalc_SpotlightIcon.png; sourceTree = "<group>"; };
+		4C2CF83317FAFA3900338522 /* AdCalc_SettingsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AdCalc_SettingsIcon.png; sourceTree = "<group>"; };
+		4C2CF83517FAFB0900338522 /* AdCalc_LoadUpScreen_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AdCalc_LoadUpScreen_2x.png; sourceTree = "<group>"; };
 		4C35832817EC4BC500C359E8 /* AdCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C35832B17EC4BC500C359E8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C35832D17EC4BC500C359E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -162,6 +168,9 @@
 		4CE5ED9517F999070014C975 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4C2CF83517FAFB0900338522 /* AdCalc_LoadUpScreen_2x.png */,
+				4C2CF83317FAFA3900338522 /* AdCalc_SettingsIcon.png */,
+				4C2CF83117FAF9D700338522 /* AdCalc_SpotlightIcon.png */,
 				4C2CF82F17FAF33F00338522 /* AdCalc_LoadUpScreen.png */,
 				4C2CF82C17FAEEA300338522 /* AdCalc_BackgroundImage.png */,
 				4C2CF82917FAEC6500338522 /* AdCalc_AppIcon.png */,
@@ -249,10 +258,13 @@
 			files = (
 				4C35835B17EC4BDB00C359E8 /* MainStoryboard.storyboard in Resources */,
 				4C35833617EC4BC500C359E8 /* InfoPlist.strings in Resources */,
+				4C2CF83617FAFB0900338522 /* AdCalc_LoadUpScreen_2x.png in Resources */,
 				4C2CF83017FAF33F00338522 /* AdCalc_LoadUpScreen.png in Resources */,
+				4C2CF83417FAFA3900338522 /* AdCalc_SettingsIcon.png in Resources */,
 				4C2CF82E17FAEEA300338522 /* AdCalc_BackgroundImage.png in Resources */,
 				4C2CF82A17FAEC6500338522 /* AdCalc_AppIcon.png in Resources */,
 				4C35833E17EC4BC500C359E8 /* Images.xcassets in Resources */,
+				4C2CF83217FAF9D700338522 /* AdCalc_SpotlightIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
