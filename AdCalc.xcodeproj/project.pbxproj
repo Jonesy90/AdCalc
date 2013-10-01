@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C2CF82A17FAEC6500338522 /* AdCalc_AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CF82917FAEC6500338522 /* AdCalc_AppIcon.png */; };
+		4C2CF82D17FAEEA300338522 /* AdCalc_LoadUpScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CF82B17FAEEA300338522 /* AdCalc_LoadUpScreen.png */; };
+		4C2CF82E17FAEEA300338522 /* AdCalc_BackgroundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CF82C17FAEEA300338522 /* AdCalc_BackgroundImage.png */; };
 		4C35832C17EC4BC500C359E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C35832B17EC4BC500C359E8 /* Foundation.framework */; };
 		4C35832E17EC4BC500C359E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C35832D17EC4BC500C359E8 /* CoreGraphics.framework */; };
 		4C35833017EC4BC500C359E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C35832F17EC4BC500C359E8 /* UIKit.framework */; };
@@ -21,8 +24,6 @@
 		4C35835117EC4BC500C359E8 /* AdCalcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C35835017EC4BC500C359E8 /* AdCalcTests.m */; };
 		4C35835B17EC4BDB00C359E8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C35835A17EC4BDB00C359E8 /* MainStoryboard.storyboard */; };
 		4C35835E17EC4CA600C359E8 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C35835D17EC4CA600C359E8 /* MainViewController.m */; };
-		4CE5ED9D17F99FE90014C975 /* AdCalc_StartUp_Screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CE5ED9C17F99FE90014C975 /* AdCalc_StartUp_Screen.png */; };
-		4CE5ED9F17F9A04B0014C975 /* AdCalc_AppLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CE5ED9E17F9A04B0014C975 /* AdCalc_AppLogo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C2CF82917FAEC6500338522 /* AdCalc_AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AdCalc_AppIcon.png; sourceTree = "<group>"; };
+		4C2CF82B17FAEEA300338522 /* AdCalc_LoadUpScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AdCalc_LoadUpScreen.png; sourceTree = "<group>"; };
+		4C2CF82C17FAEEA300338522 /* AdCalc_BackgroundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AdCalc_BackgroundImage.png; sourceTree = "<group>"; };
 		4C35832817EC4BC500C359E8 /* AdCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C35832B17EC4BC500C359E8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C35832D17EC4BC500C359E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,8 +59,6 @@
 		4C35835A17EC4BDB00C359E8 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = ../MainStoryboard.storyboard; sourceTree = "<group>"; };
 		4C35835C17EC4CA600C359E8 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		4C35835D17EC4CA600C359E8 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		4CE5ED9C17F99FE90014C975 /* AdCalc_StartUp_Screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AdCalc_StartUp_Screen.png; sourceTree = "<group>"; };
-		4CE5ED9E17F9A04B0014C975 /* AdCalc_AppLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AdCalc_AppLogo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,8 +162,9 @@
 		4CE5ED9517F999070014C975 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				4CE5ED9E17F9A04B0014C975 /* AdCalc_AppLogo.png */,
-				4CE5ED9C17F99FE90014C975 /* AdCalc_StartUp_Screen.png */,
+				4C2CF82B17FAEEA300338522 /* AdCalc_LoadUpScreen.png */,
+				4C2CF82C17FAEEA300338522 /* AdCalc_BackgroundImage.png */,
+				4C2CF82917FAEC6500338522 /* AdCalc_AppIcon.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -244,10 +247,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C2CF82D17FAEEA300338522 /* AdCalc_LoadUpScreen.png in Resources */,
 				4C35835B17EC4BDB00C359E8 /* MainStoryboard.storyboard in Resources */,
-				4CE5ED9D17F99FE90014C975 /* AdCalc_StartUp_Screen.png in Resources */,
 				4C35833617EC4BC500C359E8 /* InfoPlist.strings in Resources */,
-				4CE5ED9F17F9A04B0014C975 /* AdCalc_AppLogo.png in Resources */,
+				4C2CF82E17FAEEA300338522 /* AdCalc_BackgroundImage.png in Resources */,
+				4C2CF82A17FAEC6500338522 /* AdCalc_AppIcon.png in Resources */,
 				4C35833E17EC4BC500C359E8 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

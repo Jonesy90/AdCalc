@@ -33,6 +33,8 @@
     self.view.backgroundColor = [UIColor grayColor];
     
     
+    
+    
 }
 
 - (IBAction)calculateButton:(id)sender {
