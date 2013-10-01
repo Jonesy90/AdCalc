@@ -66,7 +66,9 @@
                         <barButtonItem key="rightBarButtonItem" title="Info" style="done" id="fbf-wB-NC9"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="clearButton" destination="OUT-4g-rK8" id="pRn-vY-FJT"/>
                         <outlet property="deliveryTextField" destination="QhR-jk-eud" id="JPo-BF-TOo"/>
+                        <outlet property="infoButton" destination="fbf-wB-NC9" id="AVK-2C-MZ0"/>
                         <outlet property="metricPicker" destination="BfH-73-oVf" id="YI9-hQ-iU0"/>
                         <outlet property="revenueTextField" destination="wbf-RN-wL4" id="Cem-Gr-Z3P"/>
                         <outlet property="totalLabel" destination="1ds-eY-O7D" id="uEG-7w-OeP"/>

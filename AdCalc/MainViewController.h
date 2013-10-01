@@ -29,9 +29,10 @@
 
 @property (weak, nonatomic) IBOutlet UIPickerView *metricPicker;
 
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *clearButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *infoButton;
 
 - (IBAction)calculateButton:(id)sender;
-- (IBAction)clear:(id)sender;
 
 - (void) clearContents;
 

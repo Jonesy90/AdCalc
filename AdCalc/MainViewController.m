@@ -20,6 +20,8 @@
 @synthesize metricPicker = _metricPicker;
 @synthesize totalLabel = _totalLabel;
 @synthesize currencyArray = _currencyArray;
+@synthesize clearButton = _clearButton;
+@synthesize infoButton = _infoButton;
 
 
 - (void)viewDidLoad
@@ -33,6 +35,11 @@
     UIImage *backgroundImage = [UIImage imageNamed:@"AdCalc_BackgroundImage.png"];
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:backgroundImage];
     
+    _clearButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(clearContents)];
+    
+    
+    
+//    _infoButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(<#selector#>)];
 }
 
 - (IBAction)calculateButton:(id)sender {
