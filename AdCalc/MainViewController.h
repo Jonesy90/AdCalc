@@ -29,7 +29,6 @@
 
 @property (weak, nonatomic) IBOutlet UIPickerView *metricPicker;
 
-@property (nonatomic, strong) UIImageView *background;
 
 - (IBAction)calculateButton:(id)sender;
 - (IBAction)clear:(id)sender;

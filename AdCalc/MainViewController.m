@@ -29,11 +29,9 @@
     
     UITapGestureRecognizer *tabGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeKeyboard)];
     [self.view addGestureRecognizer:tabGesture];
-    
-    self.view.backgroundColor = [UIColor grayColor];
-    
-    
-    
+        
+    UIImage *backgroundImage = [UIImage imageNamed:@"AdCalc_BackgroundImage.png"];
+    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:backgroundImage];
     
 }
 
@@ -116,8 +114,9 @@
     if (component == METRIC) {
     return [_metricArray objectAtIndex:row];
     }
-
+    
     return 0;
+    
 }
 
 - (void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
@@ -130,6 +129,21 @@
 //    }
 
 }
+
+//Changes the Font type of the text inside the UIPickerView.
+- (UIView *) pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
+    UILabel *pickerLabel = (UILabel *)view;
+    
+    if (pickerLabel == nil) {
+        CGRect frame = CGRectMake(0.0, 0.0, 70, 30);
+        pickerLabel = [[UILabel alloc] initWithFrame:frame];
+        [pickerLabel setContentMode:UIViewContentModeScaleAspectFill];
+        [pickerLabel setFont:[UIFont fontWithName:@"Chalkduster" size:18.0]];
+    }
+    [pickerLabel setText:[_metricArray objectAtIndex:row]];
+    return pickerLabel;
+}
+
 
 #pragma mark - Motion Events
 
