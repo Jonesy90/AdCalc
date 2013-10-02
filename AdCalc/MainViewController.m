@@ -59,7 +59,7 @@
     
     //Checks the length of the revenue and delivery objects and sees if they length is equal to 0. If it is an alert will display.
     if ([revenueString length] == 0 && [deliveryString length] == 0 && [metricString length] == 0){
-
+        //This error message displays if no input has been made to the TextFields.
         [blankFieldsAlert show];
     }
     //The Revenue and Delivery TextField have to be filled in. Metrics TextField will be calculated.
@@ -113,6 +113,7 @@
         
     }
     else {
+        //Displayed if something went wrong.
         [somethingWentWrongAlert show];
     }
 
