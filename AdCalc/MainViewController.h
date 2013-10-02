@@ -22,20 +22,20 @@
 @property (nonatomic, strong) NSArray *metricArray;
 @property (nonatomic, strong) NSArray *currencyArray;
 
-@property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 
+@property (strong, nonatomic) IBOutlet UITextField *metricTextField;
 @property (weak, nonatomic) IBOutlet UITextField *revenueTextField;
 @property (weak, nonatomic) IBOutlet UITextField *deliveryTextField;
 
 @property (weak, nonatomic) IBOutlet UIPickerView *metricPicker;
-
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *clearButton;
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *infoButton;
+
+@property (strong, nonatomic) IBOutlet UIButton *infoButton;
 
 - (IBAction)calculateButton:(id)sender;
 
 - (void) clearContents;
-
+- (void) removeKeyboard;
 
 
 @end

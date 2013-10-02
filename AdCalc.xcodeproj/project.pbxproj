@@ -27,6 +27,7 @@
 		4C35835117EC4BC500C359E8 /* AdCalcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C35835017EC4BC500C359E8 /* AdCalcTests.m */; };
 		4C35835B17EC4BDB00C359E8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C35835A17EC4BDB00C359E8 /* MainStoryboard.storyboard */; };
 		4C35835E17EC4CA600C359E8 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C35835D17EC4CA600C359E8 /* MainViewController.m */; };
+		4CEC469D17FC597C0042549F /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEC469C17FC597C0042549F /* InfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		4C35835A17EC4BDB00C359E8 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = ../MainStoryboard.storyboard; sourceTree = "<group>"; };
 		4C35835C17EC4CA600C359E8 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		4C35835D17EC4CA600C359E8 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		4CEC469B17FC597C0042549F /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		4CEC469C17FC597C0042549F /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,8 @@
 				4C35833B17EC4BC500C359E8 /* AppDelegate.m */,
 				4C35835C17EC4CA600C359E8 /* MainViewController.h */,
 				4C35835D17EC4CA600C359E8 /* MainViewController.m */,
+				4CEC469B17FC597C0042549F /* InfoViewController.h */,
+				4CEC469C17FC597C0042549F /* InfoViewController.m */,
 				4C35833D17EC4BC500C359E8 /* Images.xcassets */,
 				4C35833217EC4BC500C359E8 /* Supporting Files */,
 			);
@@ -285,6 +290,7 @@
 			files = (
 				4C35833C17EC4BC500C359E8 /* AppDelegate.m in Sources */,
 				4C35835E17EC4CA600C359E8 /* MainViewController.m in Sources */,
+				4CEC469D17FC597C0042549F /* InfoViewController.m in Sources */,
 				4C35833817EC4BC500C359E8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

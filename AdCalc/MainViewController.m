@@ -18,10 +18,11 @@
 @synthesize revenueTextField = _revenueTextField;
 @synthesize deliveryTextField = _deliveryTextField;
 @synthesize metricPicker = _metricPicker;
-@synthesize totalLabel = _totalLabel;
+@synthesize metricTextField = _metricTextField;
 @synthesize currencyArray = _currencyArray;
 @synthesize clearButton = _clearButton;
 @synthesize infoButton = _infoButton;
+
 
 
 - (void)viewDidLoad
@@ -35,11 +36,8 @@
     UIImage *backgroundImage = [UIImage imageNamed:@"AdCalc_BackgroundImage.png"];
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:backgroundImage];
     
-    _clearButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(clearContents)];
-    
-    
-    
-//    _infoButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(<#selector#>)];
+    _clearButton.action = @selector(clearContents);
+
 }
 
 - (IBAction)calculateButton:(id)sender {
@@ -47,11 +45,12 @@
     //Checks for white spaces within the textField.
     NSString *revenueString = [self.revenueTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *deliveryString = [self.deliveryTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *metricString = [self.metricTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     //Creating two float values that is taken from the two textFields.
     float revenue = [self.revenueTextField.text floatValue];
     float delivery = [self.deliveryTextField.text floatValue];
-    double total = [self.totalLabel.text doubleValue];
+    float metric = [self.metricTextField .text floatValue];
     
     //Alerts.
     UIAlertView *somethingWentWrongAlert = [[UIAlertView alloc] initWithTitle:@"Something Went Wrong" message:@"Something went wrong. Please try again." delegate:nil cancelButtonTitle:@"Done" otherButtonTitles: nil];
@@ -59,42 +58,79 @@
     
     
     //Checks the length of the revenue and delivery objects and sees if they length is equal to 0. If it is an alert will display.
-    if ([revenueString length] == 0 || [deliveryString length] == 0){
+    if ([revenueString length] == 0 && [deliveryString length] == 0 && [metricString length] == 0){
 
-        
         [blankFieldsAlert show];
     }
-    else {
-        //The Metric will be in dollars.
-        if (metricRow == 0 && delivery > 0) {
-            total = revenue / delivery * 1000;
-            self.totalLabel.text = [[NSString alloc] initWithFormat:@"$ %0.02f", total];
+    //The Revenue and Delivery TextField have to be filled in. Metrics TextField will be calculated.
+    else if ([revenueString length] >= 1 && [deliveryString length] >= 1 && [metricString length] == 0) {
+            //The CPM metric is selected in this IF statement.
+        if (metricRow == 0) {
+            //Formula for figuring out the CPM rate.
+            metric = revenue / delivery * 1000;
+            self.metricTextField.text = [[NSString alloc] initWithFormat:@"%0.02f", metric];
+            NSLog(@"CPM rate will be displayed.");
         }
-        else if (metricRow == 1 && delivery > 0){
-            total = revenue / delivery;
-            self.totalLabel.text = [[NSString alloc] initWithFormat:@"$ %0.02f", total];
+            //The CPC/CPA metric is selected in this ELSE/IF statement.
+        else if (metricRow == 1) {
+            //Formula for figuring out the CPC/CPA rate.
+            metric = revenue / delivery;
+            self.metricTextField.text = [[NSString alloc] initWithFormat:@"%0.02f", metric];
+            NSLog(@"CPC rate will be displayed.");
         }
-        else {
-            [somethingWentWrongAlert show];
+    }
+    //The Delivery and Metric TextFields have to be filled in. Revenue TextField will be calculated.
+    else if ([revenueString length] == 0 && [deliveryString length] >= 1 && [metricString length] >=1) {
+            //The CPM metric is selected in this IF statement.
+        if (metricRow == 0){
+            //Forumula for figuring out the Revenue (CPM).
+            revenue = metric * delivery / 1000;
+            self.revenueTextField.text = [[NSString alloc] initWithFormat:@"%0.02f", revenue];
+            NSLog(@"Revenue for a CPM campaign will be displayed.");
+        }
+            //The CPC/CPA metric is selected in this ELSE/IF statement.
+        else if (metricRow == 0) {
+            //Formula for figuring out the Revenue (CPC/CPA).
+            revenue = delivery * metric;
+            self.revenueTextField.text = [[NSString alloc] initWithFormat:@"%0.02f", revenue];
+            NSLog(@"Revenue for a CPC/CPA campaign will be displayed.");
+        }
+    }
+    //The Metric and Revenue TextFields have been filled in. Delivery TextField will be calculated.
+    else if ([metricString length] >= 1 && [revenueString length] >= 1 && [deliveryString length] == 0){
+        if (metricRow == 0) {
+            //Formula for figuring out the amount to be delivered CPM.
+            delivery = metric * (1000/revenue);
+            self.deliveryTextField.text = [[NSString alloc] initWithFormat:@"%g", delivery];
+            NSLog(@"Impression amount to be delivered will be displayed.");
+        }
+        else if (metricRow == 1) {
+            //Forumula for figuring out the amount to be delivered CPC/CPA.
+            delivery = revenue * metric;
+            self.deliveryTextField.text = [[NSString alloc] initWithFormat:@"%f", delivery];
+            NSLog(@"Clicks/Conversions amount to be delivered will displayed.");
         }
         
     }
-    
+    else {
+        [somethingWentWrongAlert show];
+    }
+
 }
 - (void) removeKeyboard {
+    [self.metricTextField resignFirstResponder];
     [self.revenueTextField resignFirstResponder];
     [self.deliveryTextField resignFirstResponder];
 }
 
-- (IBAction)clear:(id)sender {
-    [self clearContents];
-}
 
 - (void)clearContents{
     
-    self.totalLabel.text = @"0";
+    self.metricTextField.text = nil;
     self.revenueTextField.text = nil;
     self.deliveryTextField.text = nil;
+    
+    NSLog(@"ClearButton Pressed.");
 }
 
 
@@ -142,9 +178,10 @@
     UILabel *pickerLabel = (UILabel *)view;
     
     if (pickerLabel == nil) {
-        CGRect frame = CGRectMake(0.0, 0.0, 70, 30);
+        CGRect frame = CGRectMake(0.0, 0.0, 100, 30);
         pickerLabel = [[UILabel alloc] initWithFrame:frame];
         [pickerLabel setContentMode:UIViewContentModeScaleAspectFill];
+        [pickerLabel setTextAlignment:NSTextAlignmentCenter];
         [pickerLabel setFont:[UIFont fontWithName:@"Chalkduster" size:18.0]];
     }
     [pickerLabel setText:[_metricArray objectAtIndex:row]];
